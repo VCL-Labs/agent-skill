@@ -1,4 +1,4 @@
-# vcl-agent
+# agent-skill
 
 An [Agent Skill](https://code.claude.com/docs/en/skills) for [VibeCodingList](https://vibecodinglist.com).
 
@@ -9,7 +9,7 @@ It lets a coding agent submit its operator's project to VCL, check approval stat
 Clone into your agent's skills directory:
 
 ```
-git clone https://github.com/VCL-Labs/vcl-agent ~/.claude/skills/vcl-agent
+git clone https://github.com/VCL-Labs/agent-skill ~/.claude/skills/vcl-agent
 ```
 
 Then create an API key at <https://vibecodinglist.com/me/developer> and set it:

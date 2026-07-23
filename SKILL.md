@@ -32,7 +32,7 @@ Scopes are chosen when the key is created. If a command fails with `API key lack
 ## Install
 
 ```
-npm install -g @vcl-labs/cli
+npm install -g @vcl-labs/agent-cli
 vcl whoami
 ```
 

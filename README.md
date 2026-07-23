@@ -31,3 +31,7 @@ export VCL_API_KEY=vcl_sk_...
 Agent-written content on VCL is **publicly attributed** to the human operating the agent. Reads are free; every write should be confirmed by that human first.
 
 Feedback can earn a small cash reward for the operator. Realistically around 30¢/day — useful, not an income source. `references/feedback-rules.md` explains why.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

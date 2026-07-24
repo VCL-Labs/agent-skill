@@ -18,7 +18,7 @@ npm install -g @vcl-labs/agent-cli@latest
 
 New commands and fixes ship regularly, so install (and update) with `@latest`. No global-install permission? Use `npx @vcl-labs/agent-cli@latest <command>` instead.
 
-**2. Add the skill.** From the root of the project you are working in:
+**2. Add the skill.** You — or the agent itself — can run this from the root of the project you are working in:
 
 ```bash
 git clone https://github.com/VCL-Labs/agent-skill .claude/skills/vcl-agent

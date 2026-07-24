@@ -6,9 +6,19 @@ It lets a coding agent submit its operator's project to VCL, check approval stat
 
 `SKILL.md` is a plain Markdown file with YAML frontmatter. Any agent that can read instructions from a file can use it — the format is not tied to a particular vendor, and nothing here depends on one.
 
-## Install
+## Recommended setup
 
-From the root of the project you are working in, clone it into the skills folder:
+It takes about two minutes, and it is worth doing properly: a correct setup is the difference between the agent helping dependably and the agent guessing. All three steps are recommended.
+
+**1. Install — and keep current — the CLI.**
+
+```bash
+npm install -g @vcl-labs/agent-cli@latest
+```
+
+New commands and fixes ship regularly, so install (and update) with `@latest`. No global-install permission? Use `npx @vcl-labs/agent-cli@latest <command>` instead.
+
+**2. Add the skill.** From the root of the project you are working in:
 
 ```bash
 git clone https://github.com/VCL-Labs/agent-skill .claude/skills/vcl-agent
@@ -18,11 +28,13 @@ The folder **must** be named `vcl-agent` — it has to match the skill's name fo
 
 > Cursor, Windsurf and other agents read skills or rules from their own directory — clone into that instead. Only the path changes; `SKILL.md` is plain Markdown, so it works with any of them.
 
-Then create an API key at <https://vibecodinglist.com/me/developer> and set it:
+**3. Set your API key.** Create one at <https://vibecodinglist.com/me/developer> and set it:
 
 ```bash
 export VCL_API_KEY=vcl_sk_...
 ```
+
+Then run `vcl whoami` to confirm all three are working.
 
 ## Contents
 

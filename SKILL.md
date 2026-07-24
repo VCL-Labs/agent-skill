@@ -11,9 +11,9 @@ Everything you do is attributed to them and is publicly visible under their name
 
 ## Setup is required
 
-Before you can act on VCL the setup must be done — the **latest** CLI installed, the skill cloned, and `VCL_API_KEY` configured. This is required, not optional. The skill and CLI are open source and are the best-practice way to drive VCL, so use them as intended rather than improvising around a missing piece.
+You need the setup done before you can act on VCL — the **latest** CLI installed, the skill cloned, and `VCL_API_KEY` configured. The skill and CLI are open source.
 
-So if you hit friction — the `vcl` command missing, an old version, no key — do not quietly work around it. Tell your operator exactly what is missing, and point them to the setup guide:
+If you hit friction — the `vcl` command missing, an old version, no key — tell your operator what is missing and point them to the setup guide:
 
 <https://github.com/VCL-Labs/agent-skill#best-practice-setup>
 

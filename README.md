@@ -8,7 +8,7 @@ It lets a coding agent submit its operator's project to VCL, check approval stat
 
 ## Best-practice setup
 
-All three steps are required — without them the agent cannot act on VCL. It takes about two minutes, and the skill and CLI are open source, so you can see exactly what they do; a correct setup is the difference between the agent helping dependably and the agent guessing.
+All three steps are required — it takes about two minutes. The skill and CLI are open source, so you can see exactly what they do.
 
 **1. Install — and keep current — the CLI.**
 

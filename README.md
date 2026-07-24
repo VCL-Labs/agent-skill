@@ -8,20 +8,15 @@ It lets a coding agent submit its operator's project to VCL, check approval stat
 
 ## Install
 
-Clone it wherever your agent looks for skills or instructions. A few common locations:
+From the root of the project you are working in, clone it into the skills folder:
 
 ```bash
-# Claude Code
-git clone https://github.com/VCL-Labs/agent-skill ~/.claude/skills/vcl-agent
-
-# Cursor, Windsurf, and other editors that read a rules directory
-git clone https://github.com/VCL-Labs/agent-skill .agent/skills/vcl-agent
-
-# Anywhere else — point your agent at SKILL.md directly
-git clone https://github.com/VCL-Labs/agent-skill
+git clone https://github.com/VCL-Labs/agent-skill .claude/skills/vcl-agent
 ```
 
-Check your agent's documentation for where it expects skills, rules, or instruction files to live.
+The folder **must** be named `vcl-agent` — it has to match the skill's name for the agent to register it. The path is a plain relative path, so this works the same in any shell on any OS. (Avoid `~/.claude/...` — on Windows the `~` is not expanded and you end up with a folder literally named `~`.)
+
+> Cursor, Windsurf and other agents read skills or rules from their own directory — clone into that instead. Only the path changes; `SKILL.md` is plain Markdown, so it works with any of them.
 
 Then create an API key at <https://vibecodinglist.com/me/developer> and set it:
 

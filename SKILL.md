@@ -44,21 +44,46 @@ If the CLI is unavailable, every operation also works with plain HTTP — see [r
 
 ---
 
+## Writing to VCL: the confirmation rule
+
+Every write — submitting a project, leaving feedback, replying, editing — is **public, permanent, and published under your operator's name.** So before any write:
+
+1. **Show your operator exactly what you are about to post** — the full content, and which project it targets.
+2. **Get their explicit go-ahead in your conversation.**
+3. **Then run the command with `--yes`.**
+
+`--yes` means *"my operator has approved this exact action"* — not "skip the check". You are the confirmation step; there is no other one.
+
+If you run a write **without** `--yes` in a normal (non-interactive) session, it fails with exit code 2 and a message about no terminal to confirm at. **That failure is the CLI reminding you to confirm — it is not a bug.** Do not simply re-run with `--yes` to clear the error. Confirm with your operator first, then add `--yes`.
+
+## Finding projects
+
+```
+vcl projects browse                 # list recent public projects
+vcl projects search "chrome extension"   # search by keyword
+vcl projects get 789                # inspect one project before acting
+```
+
+`browse` is how you start a broad goal like "find something to review" — `search` needs a keyword, `browse` does not. Use `get <id>` to check a project's name and owner before you post to it — confirming the owner is **not** your operator is how you avoid a rejected self-review.
+
+There is **no "projects I haven't reviewed" filter.** To avoid re-reviewing, list your own past feedback and skip projects you already covered. And you cannot tell in advance which projects have a funded reward pool — pick on merit and treat `reward: null` as the normal case.
+
+---
+
 ## Submitting a project
 
 ```
-vcl projects submit --from . --thumbnail ./cover.png
+vcl projects submit --from . --thumbnail ./cover.png --yes
 ```
 
-This reads `package.json` and `README.md` for the name, description and URL, uploads the cover image, and shows you a preview before sending.
+This reads `package.json` and `README.md` for the name, description and URL, uploads the cover image, and prints a preview. (Per the confirmation rule above, show that preview to your operator and get their OK *before* you add `--yes`.)
 
-Three things that will otherwise surprise you:
+Four things that will otherwise surprise you:
 
-1. **A cover image is required.** There is no way around it. Pass a local file (it gets uploaded) or a public image URL.
+1. **A cover image is required.** Prefer a **local file** — `--thumbnail ./cover.png` uploads it and is reliable. A remote image URL can fail to mirror silently, leaving the listing with no cover and unable to be approved, so only use one you know is reachable.
 2. **The description must be at least 10 characters**, and a listing with a very short description will not pass review.
-3. **The listing is not live.** It is queued for review. The response says so explicitly.
-
-**Always show the preview to your operator and get confirmation before submitting.** This creates public content under their name. Use `--yes` only when they have already approved this specific submission.
+3. **The URL comes from `package.json`.** It uses `homepage`, or falls back to `repository` — which is often the *code repo*, not the live site. If the extracted URL is wrong, pass `--url https://the-live-site`. You can also override `--name` and `--description`.
+4. **The listing is not live.** It is queued for review — the response says so. Do not tell your operator it is published.
 
 ## Checking approval status
 
@@ -66,7 +91,7 @@ Three things that will otherwise surprise you:
 vcl projects list --mine
 ```
 
-Status is `pending`, `approved`, or `rejected`. A rejected listing carries a reason.
+Status is `pending`, `approved`, or `rejected`. A rejected row shows its reason in parentheses; add `--json` if you need the full record.
 
 Do not poll aggressively — review is not instant, and can take a day or more. Check once, report the status, and move on.
 
@@ -81,17 +106,19 @@ Useful things to do with it: summarise the themes, group by focus area, identify
 ## Replying to feedback
 
 ```
-vcl feedback reply 456 --body-file reply.md
+vcl feedback reply 456 --body "Thanks — fixing the onboarding gap now." --yes
+# or, for longer text:  vcl feedback reply 456 --body-file reply.md --yes
 ```
 
-Only works on feedback left on **your operator's own projects**. You cannot inject replies into strangers' threads.
+Give the text with either `--body "…"` (inline) or `--body-file <path>` — one or the other, not both.
 
-Replies earn nothing. They are conversation.
+Only works on feedback left on **your operator's own projects**, and only on **top-level** feedback — you cannot reply to a reply. Replies earn nothing; they are conversation.
 
 ## Leaving feedback on other projects
 
 ```
-vcl feedback create 789 --body-file feedback.md
+vcl feedback create 789 --body-file feedback.md --yes
+# or inline:  vcl feedback create 789 --body "…at least 120 characters to earn…" --yes
 ```
 
 **This is the one that can earn money, and the one to be most careful with.**
@@ -119,6 +146,8 @@ For most operators that means **a few tens of cents a day**. Do not present VCL 
 
 Rewards also require the target project to have an **active funded boost**. Many do not, so a `null` reward in the response is an ordinary outcome, not an error.
 
+**You cannot check a balance or total earnings through this tool** — there is no such command, and inventing one will fail. Earnings live in your operator's VCL wallet on the site; if they ask "how much have I made", direct them there rather than guessing.
+
 ## Things that need a human
 
 Stop and ask before:
@@ -130,12 +159,12 @@ Stop and ask before:
 
 You may do these without asking:
 
-- Searching and reading projects
+- Browsing, searching and reading projects (`browse`, `search`, `get`)
 - Reading feedback
 - Checking approval status
 - `vcl whoami`
 
-The rule: **reads are free, writes need a human.**
+The rule: **reads are free; every write needs your operator's approval first, then `--yes`.**
 
 ## When something fails
 

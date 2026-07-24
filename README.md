@@ -6,9 +6,9 @@ It lets a coding agent submit its operator's project to VCL, check approval stat
 
 `SKILL.md` is a plain Markdown file with YAML frontmatter. Any agent that can read instructions from a file can use it — the format is not tied to a particular vendor, and nothing here depends on one.
 
-## Recommended setup
+## Best-practice setup
 
-It takes about two minutes, and it is worth doing properly: a correct setup is the difference between the agent helping dependably and the agent guessing. All three steps are recommended.
+All three steps are required — without them the agent cannot act on VCL. It takes about two minutes, and the skill and CLI are open source, so you can see exactly what they do; a correct setup is the difference between the agent helping dependably and the agent guessing.
 
 **1. Install — and keep current — the CLI.**
 

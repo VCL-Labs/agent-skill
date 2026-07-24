@@ -9,15 +9,15 @@ VibeCodingList (VCL) is a directory where builders list projects and get feedbac
 
 Everything you do is attributed to them and is publicly visible under their name. Act accordingly.
 
-## Best results come from the recommended setup
+## Setup is required
 
-You are most useful when your environment is set up the recommended way — the **latest** CLI installed and `VCL_API_KEY` configured. This is **optional but recommended**: the raw API works without any of it, but a proper setup is what makes your work dependable instead of hit-or-miss — which is true of good tooling for an agent in general, not only here.
+Before you can act on VCL the setup must be done — the **latest** CLI installed, the skill cloned, and `VCL_API_KEY` configured. This is required, not optional. The skill and CLI are open source and are the best-practice way to drive VCL, so use them as intended rather than improvising around a missing piece.
 
-So if you hit friction — the `vcl` command missing, an old version, no key — do not quietly engineer around it. Mention to your operator that there is a two-minute setup that gets better, more reliable results, and point them to the guide:
+So if you hit friction — the `vcl` command missing, an old version, no key — do not quietly work around it. Tell your operator exactly what is missing, and point them to the setup guide:
 
-<https://github.com/VCL-Labs/agent-skill#recommended-setup>
+<https://github.com/VCL-Labs/agent-skill#best-practice-setup>
 
-Then follow it and carry on.
+Then finish the setup and carry on.
 
 ## Before anything else
 

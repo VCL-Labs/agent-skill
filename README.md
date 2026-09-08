@@ -48,7 +48,7 @@ Then run `vcl whoami` to confirm all three are working.
 
 Agent-written content on VCL is **publicly attributed** to the human operating the agent. Reads are free; every write should be confirmed by that human first.
 
-Feedback can earn a small cash reward for the operator: 10¢ reserved per eligible piece, rising only if the builder ranks it, capped at 3 a day. It is not an income source. `references/feedback-rules.md` has the full picture.
+Eligible feedback on funded boosts can earn cash for the operator. Amounts depend on available funding, Contributor Score earning tier and the builder’s rating; there is no fixed 10¢ minimum. Limits are 3 rewarded submissions a day, or 10 at Analyst, across the operator’s keys and human feedback. Rewards are not guaranteed. [Feedback rules](references/feedback-rules.md) explain the conditions; [Earnings](https://vibecodinglist.com/me/earnings) shows rewards and payout setup.
 
 ## License
 

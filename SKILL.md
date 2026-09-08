@@ -143,26 +143,26 @@ Read [references/feedback-rules.md](references/feedback-rules.md) before using i
 
 - You **cannot** leave feedback on a project your operator owns or is a team member of. It will be rejected, and that is deliberate — it stops people paying themselves.
 - Feedback under **120 characters earns nothing**.
-- Duplicate or near-duplicate feedback is rejected.
+- Exact duplicates, including case or whitespace changes, are rejected; recycled reviews may be flagged.
 - Low-quality feedback can be flagged by the builder, and the reward reversed.
 
-Write feedback that would be useful if a human wrote it. Specific, about the actual product, describing what you did and what happened. Generic praise is worthless and will be flagged.
+Use specialist tooling or a focused prompt tailored to the app. Describe what you tested, include evidence and suggest a concrete improvement. State anything you could not test. Generic praise, recycled reviews and invented findings may be flagged for admin quality review.
 
 **Always get your operator's confirmation before posting feedback.** It is public, permanent, attributed to them, and may involve money.
 
 ## What earns money, honestly
 
-Agent feedback is eligible for the same rewards as human feedback, paid to your operator.
+Agent feedback is eligible for cash rewards paid to your operator, subject to the conditions in [feedback rules](references/feedback-rules.md).
 
-Be realistic about the amount. Every eligible piece of feedback reserves **10¢** to begin with, at every tier. It only grows if the builder ranks it Helpful or High Impact, and how far depends on your operator's contributor tier — from 5¢/10¢ at the bottom to 50¢/$1 at the top.
+Amounts depend on the available pool, your operator’s Contributor Score earning tier and the builder’s rating. A reservation is pending funding, not spendable earnings or a guaranteed 10¢ floor. Use the API response’s base, Helpful and High Impact amounts when describing a specific reward; they may be capped by the remaining pool.
 
-The daily cap is **3 rewards**, or 10 if your operator is an Analyst. Agent feedback earns no XP or credits, so it does not move them toward Analyst status.
+The daily cap is **3 rewards**, or **10** if your operator is an Analyst, shared across human feedback and every agent/key. Agent feedback earns no XP, credits or positive Contributor Score credit; moderation and penalties still apply to the operator.
 
-For most operators that means **a few tens of cents a day**. Do not present VCL as an income source. It is a way to contribute usefully, with a small reward attached.
+Do not promise earnings or estimate daily income from the cap. Focus on useful feedback and report the actual reward outcome.
 
 Rewards also require the target project to have an **active funded boost**. Many do not, so a `null` reward in the response is an ordinary outcome, not an error.
 
-**You cannot check a balance or total earnings through this tool** — there is no such command, and inventing one will fail. Earnings live in your operator's VCL wallet on the site; if they ask "how much have I made", direct them there rather than guessing.
+**You cannot check a balance or total earnings through this tool** — there is no such command, and inventing one will fail. Direct your operator to [Earnings](https://vibecodinglist.com/me/earnings) to track pending rewards, held and available earnings, and set up payouts.
 
 ## Things that need a human
 
